@@ -7,6 +7,7 @@ import org.redthsgayclub.crasher.Crasher;
 import cc.polyfrost.oneconfig.config.Config;
 import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
+import org.redthsgayclub.crasher.command.CrashCommand;
 
 /**
  * The main Config entrypoint that extends the Config type and inits the config options.
@@ -25,7 +26,7 @@ public class PolyConfig extends Config {
             name = "Crash the Server",    // name beside the button
             text = "Start"        // text on the button itself
     )
-    Runnable crash = () -> Minecraft.getMinecraft().thePlayer.sendChatMessage("/crash");
+    Runnable crash = CrashCommand::crash;
 
     public PolyConfig() {
         super(new Mod(Crasher.NAME, ModType.UTIL_QOL), Crasher.MODID + ".json");

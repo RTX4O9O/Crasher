@@ -21,6 +21,10 @@ public class CrashCommand {
 
     @Main
     private void handle() {
+        crash();
+    }
+
+    public static void crash() {
         for(int i = 0; i < PolyConfig.packets; i++) {
             Minecraft.getMinecraft().thePlayer.sendQueue.addToSendQueue(new C0APacketAnimation());
         }
